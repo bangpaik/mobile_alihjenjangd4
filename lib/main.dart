@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,95 +32,86 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const PageUtama(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class PageUtama extends StatelessWidget {
+  const PageUtama({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        //huruf kecil :properti
+        //huruf besar :Widget
+        backgroundColor: Colors.green,
+        title: Text(
+          'Politeknik Negeri Padang',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+
+        //child : hanya bisa menampung 1 widget didalamnya
+        //children : bisa menampung lebih dari 1 widget (column, row, list, stack)
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Alih Jenjang D4 PNP'),
+            SizedBox(
+              height: 10,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Text('Teknik Informatika'),
+            SizedBox(
+              height: 20,
             ),
+            Text('Politeknik Negeri Padang'),
+            SizedBox(
+              height: 30,
+            ),
+            MaterialButton(
+              onPressed: () {
+                showToast('This is normal toast with animation',
+                    context: context,
+                    animation: StyledToastAnimation.slideFromRight,
+                    reverseAnimation: StyledToastAnimation.slideToRight,
+                    position: StyledToastPosition.top,
+                    startOffset: Offset(1.0, 0.0),
+                    reverseEndOffset: Offset(1.0, 0.0),
+                    animDuration: Duration(seconds: 1),
+                    duration: Duration(seconds: 4),
+                    curve: Curves.linearToEaseOut,
+                    reverseCurve: Curves.fastOutSlowIn);
+              },
+              child: Text('Tekan Ini'),
+              color: Colors.green,
+              textColor: Colors.white,
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            MaterialButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('ini adalah snackbar'),
+                  backgroundColor: Colors.deepOrangeAccent,
+                  action: SnackBarAction(
+                    label: "OK",
+                    onPressed: () {},
+                  ),
+                ));
+              },
+              color: Colors.green,
+              textColor: Colors.white,
+              child: Text('Snackbar'),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
