@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_kedua.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_ketiga.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,6 +110,21 @@ class PageUtama extends StatelessWidget {
               color: Colors.green,
               textColor: Colors.white,
               child: Text('Snackbar'),
+            ),
+
+            SizedBox(height: 10,),
+            MaterialButton(onPressed: (){
+              //pindah ke page lain
+              //navigator push : dari class A ke class B
+              //navigator pop : class B ke class A
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                PageNavigation()
+              ));
+
+            },
+              child: Text('Page Navigation'),
+              color: Colors.deepOrangeAccent,
+              textColor: Colors.white,
             )
           ],
         ),
@@ -115,3 +132,61 @@ class PageUtama extends StatelessWidget {
     );
   }
 }
+
+class PageNavigation extends StatelessWidget {
+  const PageNavigation({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text('Page Navigation'),
+        backgroundColor: Colors.purple,
+      ),
+      drawer: SizedBox(
+        width: 200,
+        child: Drawer(
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader(accountName: Text('Rizki Syaputra'),
+                  accountEmail: Text('rizki@udacoding.id'),
+                  currentAccountPicture: CircleAvatar(
+                    radius: 55,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.green,
+                      size: 65,
+                    ),
+                  ),
+              ),
+
+              ListTile(
+                title: Text("Row Widget"),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)
+                    => PageKedua()
+                  ));
+                },
+              ),
+              ListTile(
+                title: Text("Row  & Column Widget"),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)
+                  => PageKetiga()
+                  ));
+                },
+              ),
+              ListTile(
+                title: Text("List Horizontal"),
+              ),
+
+            ],
+          ),
+        ),
+      ),
+
+      body: Center(child: Text('Ini Page Navigation')),
+    );
+  }
+}
+
