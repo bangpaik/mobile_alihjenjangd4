@@ -63,6 +63,7 @@ class PageUtama extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
+            Image.asset('gambar/logo_pnp.png',height: 150, width: 150,),
             Text('Alih Jenjang D4 PNP'),
             SizedBox(
               height: 10,
@@ -125,6 +126,20 @@ class PageUtama extends StatelessWidget {
               child: Text('Page Navigation'),
               color: Colors.deepOrangeAccent,
               textColor: Colors.white,
+            ),
+            SizedBox(height: 10,),
+            MaterialButton(onPressed: (){
+              //pindah ke page lain
+              //navigator push : dari class A ke class B
+              //navigator pop : class B ke class A
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                  PagePassingData()
+              ));
+
+            },
+              child: Text('Page Passing Data'),
+              color: Colors.deepOrangeAccent,
+              textColor: Colors.white,
             )
           ],
         ),
@@ -178,6 +193,11 @@ class PageNavigation extends StatelessWidget {
               ),
               ListTile(
                 title: Text("List Horizontal"),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)
+                  => PageListView()
+                  ));
+                },
               ),
 
             ],

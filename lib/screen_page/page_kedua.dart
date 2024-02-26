@@ -28,3 +28,57 @@ class PageKedua extends StatelessWidget {
     );
   }
 }
+
+class PagePassingData extends StatelessWidget {
+  const PagePassingData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('List Data'),
+      ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, nData){
+          return ListTile(
+            title: Text('Judul Berita ke $nData'),
+            subtitle: Text('Sub Judul Berita ke $nData'),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+              PageGetData(nData)
+              ));
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class PageGetData extends StatelessWidget {
+  final int index;
+  const PageGetData(this.index, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: Text('Page Detail Get Data'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Detail Berita $index'),
+            Text('Detail Sub Berita $index')
+          ],
+        ),
+      ),
+
+    );
+  }
+}
+
+

@@ -10,7 +10,7 @@ class PageKetiga extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.green,
         title: Text(
-          'Page Kedua',
+          'Page ketiga',
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -60,3 +60,32 @@ class PageKetiga extends StatelessWidget {
     );
   }
 }
+
+class PageListView extends StatelessWidget {
+  const PageListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('Page List View'),
+      ),
+
+      body: SizedBox(
+        height: 200,
+        child: ListView(
+          scrollDirection: Axis.horizontal,//untuk scroll ke samping
+          children: List.generate(150, (index) {
+            return Card(
+              child: Center(
+                child: Text('Ini list ke $index'),
+              ),
+            );
+          }),
+        ),
+      ),
+    );
+  }
+}
+
