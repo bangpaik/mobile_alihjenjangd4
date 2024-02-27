@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_bottombar.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_kedua.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_ketiga.dart';
 
@@ -64,6 +65,7 @@ class PageUtama extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset('gambar/logo_pnp.png',height: 150, width: 150,),
+            Image.asset('gambar/movie/film9.png',height: 150, width: 150,),
             Text('Alih Jenjang D4 PNP'),
             SizedBox(
               height: 10,
@@ -138,6 +140,21 @@ class PageUtama extends StatelessWidget {
 
             },
               child: Text('Page Passing Data'),
+              color: Colors.deepOrangeAccent,
+              textColor: Colors.white,
+            ),
+
+            SizedBox(height: 10,),
+            MaterialButton(onPressed: (){
+              //pindah ke page lain
+              //navigator push : dari class A ke class B
+              //navigator pop : class B ke class A
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                  PageBottomBar()
+              ));
+
+            },
+              child: Text('Bottom Menu'),
               color: Colors.deepOrangeAccent,
               textColor: Colors.white,
             )
