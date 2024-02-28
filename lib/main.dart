@@ -3,6 +3,7 @@ import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_bottombar.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_kedua.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_ketiga.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_list_user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -157,7 +158,23 @@ class PageUtama extends StatelessWidget {
               child: Text('Bottom Menu'),
               color: Colors.deepOrangeAccent,
               textColor: Colors.white,
-            )
+            ),
+            SizedBox(height: 10,),
+            MaterialButton(onPressed: (){
+              //pindah ke page lain
+              //navigator push : dari class A ke class B
+              //navigator pop : class B ke class A
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                  PageListUser()
+              ));
+
+            },
+              child: Text('List Data User'),
+              color: Colors.deepOrangeAccent,
+              textColor: Colors.white,
+            ),
+
+
           ],
         ),
       ),
