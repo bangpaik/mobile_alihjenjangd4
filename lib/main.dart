@@ -5,6 +5,8 @@ import 'package:mobile_alihjenjangd4/screen_page/page_kedua.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_ketiga.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_list_berita.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_list_user.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_login.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,7 +73,7 @@ class PageUtama extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset('gambar/logo_pnp.png',height: 150, width: 150,),
-                Image.asset('gambar/movie/film9.png',height: 150, width: 150,),
+                // Image.asset('gambar/movie/film9.png',height: 150, width: 150,),
                 Text('Alih Jenjang D4 PNP'),
                 SizedBox(
                   height: 10,
@@ -189,6 +191,20 @@ class PageUtama extends StatelessWidget {
 
                 },
                   child: Text('List Berita'),
+                  color: Colors.deepOrangeAccent,
+                  textColor: Colors.white,
+                ),
+                SizedBox(height: 10,),
+                MaterialButton(onPressed: (){
+                  //pindah ke page lain
+                  //navigator push : dari class A ke class B
+                  //navigator pop : class B ke class A
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                      PageLogin()
+                  ));
+
+                },
+                  child: Text('Page Login'),
                   color: Colors.deepOrangeAccent,
                   textColor: Colors.white,
                 ),

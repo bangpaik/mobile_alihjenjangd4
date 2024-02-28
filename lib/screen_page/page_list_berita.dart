@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:mobile_alihjenjangd4/models/model_berita.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_detail_berita.dart';
 
 class PageListBerita extends StatefulWidget {
   const PageListBerita({super.key});
@@ -43,7 +44,11 @@ class _PageListBeritaState extends State<PageListBerita> {
                 return Padding(
                   padding: EdgeInsets.all(8),
                   child: GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)
+                        => PageDetailBerita(data)
+                      ));
+                    },
                     child: Card(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
