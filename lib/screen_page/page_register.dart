@@ -129,6 +129,7 @@ class _PageRegisterState extends State<PageRegister> {
                     return val!.isEmpty ? "Tidak Boleh kosong" : null;
                   },
                   controller: txtPassword,
+                  obscureText: true,
                   decoration: InputDecoration(
                       hintText: "Password",
                       border: OutlineInputBorder(
