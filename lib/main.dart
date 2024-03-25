@@ -7,6 +7,7 @@ import 'package:mobile_alihjenjangd4/screen_page/page_list_berita.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_list_user.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_login.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_register.dart';
+import 'package:mobile_alihjenjangd4/screen_page/screen_list_pegawai_sqflite.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PageUtama(),
+      home: const PageListPegawaiSqflite(),
+      // home: const PageUtama(),
       debugShowCheckedModeBanner: false,
     );
   }
