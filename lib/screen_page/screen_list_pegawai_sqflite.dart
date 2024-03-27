@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_alihjenjangd4/helpe/db_helper_sqflite.dart';
 import 'package:mobile_alihjenjangd4/models/model_pegawai_sqflite.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_add_pegawai_sqflite.dart';
 
 class PageListPegawaiSqflite extends StatefulWidget {
   const PageListPegawaiSqflite({super.key});
@@ -36,7 +37,11 @@ class _PageListPegawaiSqfliteState extends State<PageListPegawaiSqflite> {
         actions: [
           //untuk add data pegawai form
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                  => PageAddPegawaiSqflite()
+                ));
+              },
               icon: Icon(
                 Icons.add,
                 color: Colors.white,
@@ -54,6 +59,9 @@ class _PageListPegawaiSqfliteState extends State<PageListPegawaiSqflite> {
                 trailing: IconButton(
                   onPressed: () {
                     //untuk edit form
+                    Navigator.push(context, MaterialPageRoute(builder: (context)
+                      => PageAddPegawaiSqflite(data: data,)
+                    ));
                   },
                   icon: Icon(
                     Icons.edit,
