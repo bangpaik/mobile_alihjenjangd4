@@ -50,6 +50,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//Platform  Firebase App Id
+// web       1:592866601855:web:09105fe51fec1a5930884a
+// android   1:592866601855:android:e9c494bb4117ae1930884a
+// ios       1:592866601855:ios:f244a38dcf7bc5b530884a
+// macos     1:592866601855:ios:f7e310d6de02fde830884a
+
 
 //api key maps : AIzaSyA3wUo_5Q5Ib4_oDptBkvW1yuCVnwt9ook
 //api key : AIzaSyA3wUo_5Q5Ib4_oDptBkvW1yuCVnwt9ook

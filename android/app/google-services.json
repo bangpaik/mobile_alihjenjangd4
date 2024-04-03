@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "592866601855",
+    "project_id": "projectalihjenjangd4pnp",
+    "storage_bucket": "projectalihjenjangd4pnp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592866601855:android:e9c494bb4117ae1930884a",
+        "android_client_info": {
+          "package_name": "com.udacoding.mobile_alihjenjangd4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn3HJ_YnFbLUiqoAryjgrAgrEqy277PXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
