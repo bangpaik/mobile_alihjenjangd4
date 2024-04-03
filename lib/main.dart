@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_access_camera.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_access_camera_web.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_bottombar.dart';
+import 'package:mobile_alihjenjangd4/screen_page/page_google_maps.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_kedua.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_ketiga.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_list_berita.dart';
@@ -40,13 +43,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PageListPegawaiSqflite(),
+      home: const PageGoogleMap(),
       // home: const PageUtama(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
+
+//api key maps : AIzaSyA3wUo_5Q5Ib4_oDptBkvW1yuCVnwt9ook
+//api key : AIzaSyA3wUo_5Q5Ib4_oDptBkvW1yuCVnwt9ook
 class PageUtama extends StatelessWidget {
   const PageUtama({super.key});
 

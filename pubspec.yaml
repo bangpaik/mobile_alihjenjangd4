@@ -40,6 +40,9 @@ dependencies:
   http: ^1.2.1
   shared_preferences: ^2.2.2
   sqflite: ^2.3.2
+  image_picker: ^1.0.7
+  image_picker_for_web: ^3.0.3
+  google_maps_flutter: ^2.6.0
 
 dev_dependencies:
   flutter_test:
