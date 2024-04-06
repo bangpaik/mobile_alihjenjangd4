@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:mobile_alihjenjangd4/screen_page/auth_gmail/root_page.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_access_camera.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_access_camera_web.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_bottombar.dart';
@@ -11,6 +12,9 @@ import 'package:mobile_alihjenjangd4/screen_page/page_list_user.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_login.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_register.dart';
 import 'package:mobile_alihjenjangd4/screen_page/screen_list_pegawai_sqflite.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mobile_alihjenjangd4/screen_page/auth_gmail/base_auth.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +47,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PageGoogleMap(),
+      home: const RootPage(),
       // home: const PageUtama(),
       debugShowCheckedModeBanner: false,
     );
