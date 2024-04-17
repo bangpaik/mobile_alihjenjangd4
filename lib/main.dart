@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:mobile_alihjenjangd4/screen_page/auth_gmail/root_page.dart';
+import 'package:mobile_alihjenjangd4/screen_page/crud_firebase/dialog_food_form.dart';
+import 'package:mobile_alihjenjangd4/screen_page/crud_firebase/page_home_food.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_access_camera.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_access_camera_web.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_bottombar.dart';
@@ -47,7 +49,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RootPage(),
+      home: const RootPage(
+        auth: Auth(),
+      ),
+      // home: const PageHomeFood(),
       // home: const PageUtama(),
       debugShowCheckedModeBanner: false,
     );
@@ -223,6 +228,20 @@ class PageUtama extends StatelessWidget {
 
                 },
                   child: Text('Page Login'),
+                  color: Colors.deepOrangeAccent,
+                  textColor: Colors.white,
+                ),
+                SizedBox(height: 10,),
+                MaterialButton(onPressed: (){
+                  //pindah ke page lain
+                  //navigator push : dari class A ke class B
+                  //navigator pop : class B ke class A
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                      ShowDialogFoodForm()
+                  ));
+
+                },
+                  child: Text('Dialog Add Food'),
                   color: Colors.deepOrangeAccent,
                   textColor: Colors.white,
                 ),

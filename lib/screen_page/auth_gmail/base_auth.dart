@@ -6,7 +6,7 @@ abstract class BaseAuth{
   Future<User> getCurrentUser();
   Future<void> sendEmailVerification();
   Future<void> signOut();
-  Future<void> isEmailVerified();
+  Future<bool?> isEmailVerified();
 
 }
 

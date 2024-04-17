@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:mobile_alihjenjangd4/screen_page/auth_gmail/base_auth.dart';
+import 'package:mobile_alihjenjangd4/screen_page/crud_firebase/page_home_food.dart';
 import 'package:mobile_alihjenjangd4/screen_page/page_list_user.dart';
 
 class LoginSignUpPage extends StatefulWidget {
@@ -48,7 +49,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           setState(() {
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (_) => const PageListUser()),
+                MaterialPageRoute(builder: (_) => const PageHomeFood()),
                     (route) => false);
           });
           print("user sign id : $userId");
